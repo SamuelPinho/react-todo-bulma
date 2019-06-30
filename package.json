@@ -22,8 +22,9 @@
   "scripts": {
     "start": "npm-run-all -p frontend server",
     "frontend": "react-scripts start",
+    "frontend-build": "react-scripts build",
     "server": "nodemon server/server.js",
-    "build": "react-scripts build",
+    "build": "npm-run-all -p frontend-build server",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
