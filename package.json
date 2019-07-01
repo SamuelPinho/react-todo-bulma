@@ -23,7 +23,7 @@
     "start": "npm run server",
     "frontend": "react-scripts start",
     "frontend-build": "react-scripts build",
-    "server": "node server/server.js",
+    "server": "node ./server/server.js",
     "build": "npm run server",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
