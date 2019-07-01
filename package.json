@@ -20,11 +20,11 @@
     "react-scripts": "^3.0.1"
   },
   "scripts": {
-    "start": "node server/server.js",
+    "start": "npm-run-all -p frontend server",
     "frontend": "react-scripts start",
     "frontend-build": "react-scripts build",
-    "server": "nodemon server/server.js",
-    "build": "npm-run-all -p frontend-build server",
+    "server": "node server/server.js",
+    "build": "npm run server",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
