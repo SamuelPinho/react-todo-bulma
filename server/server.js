@@ -30,7 +30,7 @@ console.log(process.env);
 
 // Start the server
 setImmediate(() => {
-  server.listen(port, ip, function() {
+  server.listen(80, ip, function() {
     console.log('Server listening on ip ' + ip + ' on port ' + port);
   });
 });
