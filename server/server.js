@@ -26,11 +26,9 @@ app.use('/api/tasks', TaskRoutes);
 const port = process.env.PORT || 80;
 const ip = process.env.IP || '0.0.0.0';
 
-console.log(process.env);
-
 // Start the server
 setImmediate(() => {
-  server.listen(80, ip, function() {
+  server.listen(port, ip, function() {
     console.log('Server listening on ip ' + ip + ' on port ' + port);
   });
 });
