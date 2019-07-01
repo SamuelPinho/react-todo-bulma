@@ -23,11 +23,14 @@ app.use(cors());
 app.use('/api/tasks', TaskRoutes);
 
 // Defines the port to be used by the server
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 9000;
+const ip = process.env.IP || '0.0.0.0';
+
+console.log(process.env);
 
 // Start the server
 setImmediate(() => {
-  server.listen(port, function() {
-    console.log('Server listening on port ' + port);
+  server.listen(port, ip, function() {
+    console.log('Server listening on ip ' + ip + ' on port ' + port);
   });
 });
