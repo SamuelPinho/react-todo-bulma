@@ -1,3 +1,4 @@
+const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
 const TaskRoutes = require('./routes/Task');
@@ -7,12 +8,10 @@ require('dotenv').config();
 
 // Create the express application
 const app = express();
+const server = http.createServer(app);
 
 /* { useNewUrlParser: true } To prevent MongoDb DepreciationWarning */
-mongoose
-  .connect(process.env.MONGO_DB_URI, { useNewUrlParser: true })
-  .then(() => console.log('Database connected'))
-  .catch(err => console.log('Error on database connection', err));
+mongoose.connect(process.env.MONGO_DB_URI, { useNewUrlParser: true });
 
 /* To prevent MongoDb DepreciationWarning */
 mongoose.set('useFindAndModify', false);
@@ -27,6 +26,8 @@ app.use('/api/tasks', TaskRoutes);
 const port = process.env.PORT || 3001;
 
 // Start the server
-app.listen(port, function() {
-  console.log('Server listening on port ' + port);
+setImmediate(() => {
+  server.listen(port, function() {
+    console.log('Server listening on port ' + port);
+  });
 });
