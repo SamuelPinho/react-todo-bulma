@@ -20,7 +20,7 @@
     "react-scripts": "^3.0.1"
   },
   "scripts": {
-    "start": "npm-run-all -p frontend server",
+    "start": "node server/server.js",
     "frontend": "react-scripts start",
     "frontend-build": "react-scripts build",
     "server": "nodemon server/server.js",
