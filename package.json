@@ -21,17 +21,12 @@
   },
   "scripts": {
     "start": "npm run server",
-    "frontend": "react-scripts start",
-    "frontend-build": "react-scripts build",
     "server": "node ./server/server.js",
-    "build": "npm run server",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "build": "npm run server"
   },
   "devDependencies": {
     "axios": "^0.18.0",
     "moment": "^2.22.2",
-    "nodemon": "^1.18.4",
     "prop-types": "^15.6.2",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
