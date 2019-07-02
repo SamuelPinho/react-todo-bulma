@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const TaskRoutes = require('./routes/Task');
 const mongoose = require('mongoose');
 const cors = require('cors');
-// require('dotenv').config();
+require('dotenv').config();
 
 // Create the express application
 const app = express();
@@ -23,7 +23,7 @@ app.use(cors());
 app.use('/api/tasks', TaskRoutes);
 
 // Defines the port to be used by the server
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 3001;
 const ip = process.env.IP || '0.0.0.0';
 
 // Start the server

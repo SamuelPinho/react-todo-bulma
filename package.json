@@ -20,9 +20,13 @@
     "react-scripts": "^3.0.1"
   },
   "scripts": {
-    "start": "npm run server",
-    "server": "node ./server/server.js",
-    "build": "npm run server"
+    "start": "npm-run-all -p frontend server",
+    "frontend": "react-scripts start",
+    "frontend-build": "react-scripts build",
+    "server": "nodemon server/server.js",
+    "build": "npm run frontend-build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "devDependencies": {
     "axios": "^0.18.0",
